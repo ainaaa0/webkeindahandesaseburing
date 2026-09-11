@@ -460,6 +460,128 @@ function goTop() {
 
         top: 0,
 
+
+       // ================= DATABASE GOOGLE SHEETS =================
+
+async function loadDatabaseData() {
+
+    const container = document.getElementById("databaseData");
+
+    if (!container) return;
+
+    try {
+
+        const response = await fetch(API_URL, {
+
+            method: "POST",
+
+            body: new URLSearchParams({
+
+                action: "getData"
+
+            })
+
+        });
+
+        const result = await response.json();
+
+        if (result.status !== "success") {
+
+            container.innerHTML =
+                "<p>Gagal mengambil data.</p>";
+
+            return;
+
+        }
+
+        container.innerHTML = "";
+
+        if (!result.data || result.data.length === 0) {
+
+            container.innerHTML =
+                "<p>Belum ada data.</p>";
+
+            return;
+
+        }
+
+        result.data.forEach(function(item) {
+
+            const card = document.createElement("div");
+
+            card.className = "database-card";
+
+            card.innerHTML = `
+
+                ${
+                    item.gambar
+                    ?
+                    `
+                    <img
+                        src="${escapeDatabaseHTML(item.gambar)}"
+                        alt="${escapeDatabaseHTML(item.judul)}"
+                    >
+                    `
+                    :
+                    ""
+                }
+
+                <div class="database-card-content">
+
+                    <small>
+                        ${escapeDatabaseHTML(item.kategori)}
+                    </small>
+
+                    <h3>
+                        ${escapeDatabaseHTML(item.judul)}
+                    </h3>
+
+                    <p>
+                        ${escapeDatabaseHTML(item.deskripsi)}
+                    </p>
+
+                </div>
+
+            `;
+
+            container.appendChild(card);
+
+        });
+
+    } catch (error) {
+
+        console.error("Database error:", error);
+
+        container.innerHTML =
+            "<p>Database tidak dapat diakses.</p>";
+
+    }
+}
+
+
+function escapeDatabaseHTML(value) {
+
+    return String(value ?? "")
+
+        .replace(/&/g, "&amp;")
+
+        .replace(/</g, "&lt;")
+
+        .replace(/>/g, "&gt;")
+
+        .replace(/"/g, "&quot;")
+
+        .replace(/'/g, "&#039;");
+
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    loadDatabaseData();
+
+});
+
         behavior: "smooth"
 
     });
