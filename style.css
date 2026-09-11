@@ -1713,3 +1713,251 @@ footer > p {
     }
 
 }
+
+
+/* =========================
+   LOGIN ADMIN
+========================= */
+
+.login-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.12);
+
+    text-align: center;
+}
+
+.login-box input,
+.login-box button {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px;
+
+    margin-top: 12px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ddd;
+}
+
+.login-box button {
+
+    cursor: pointer;
+
+    border: none;
+
+    background: #333;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   ADMIN
+========================= */
+
+.admin-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 30px 20px;
+}
+
+.admin-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.admin-header button,
+.admin-form button,
+.admin-data-card button {
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.admin-form {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.08);
+
+    margin-bottom: 30px;
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    margin: 8px 0;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+}
+
+.admin-form textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+.database-admin {
+
+    margin-top: 30px;
+}
+
+.admin-data-card {
+
+    background: white;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.08);
+}
+
+.admin-data-card img {
+
+    width: 200px;
+
+    max-width: 100%;
+
+    border-radius: 10px;
+
+    margin: 10px 0;
+}
+
+
+/* =========================
+   DATABASE HOMEPAGE
+========================= */
+
+.database-section {
+
+    padding: 70px 20px;
+}
+
+.database-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+#databaseData {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.database-card {
+
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.08);
+
+    text-align: left;
+}
+
+.database-card img {
+
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+}
+
+.database-card-content {
+
+    padding: 20px;
+}
+
+.database-card-content small {
+
+    opacity: .7;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    .admin-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
