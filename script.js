@@ -1,210 +1,267 @@
 /* =====================================================
-   SUARA MENU
+   WEBSITE DESA SEBURING HILIR
+   JAVASCRIPT
 ===================================================== */
-
-let audioContext;
-
-
-/*
-   Membuat suara klik sederhana menggunakan Web Audio API.
-   Jadi TIDAK perlu file mp3 tambahan.
-*/
-
-function menuSound() {
-
-    try {
-
-        if (!audioContext) {
-
-            audioContext =
-                new (
-                    window.AudioContext ||
-                    window.webkitAudioContext
-                )();
-
-        }
-
-
-        const oscillator =
-            audioContext.createOscillator();
-
-
-        const gain =
-            audioContext.createGain();
-
-
-        oscillator.type = "sine";
-
-        oscillator.frequency.setValueAtTime(
-            650,
-            audioContext.currentTime
-        );
-
-
-        gain.gain.setValueAtTime(
-            0.0001,
-            audioContext.currentTime
-        );
-
-
-        gain.gain.exponentialRampToValueAtTime(
-            0.08,
-            audioContext.currentTime + 0.01
-        );
-
-
-        gain.gain.exponentialRampToValueAtTime(
-            0.0001,
-            audioContext.currentTime + 0.08
-        );
-
-
-        oscillator.connect(gain);
-
-        gain.connect(audioContext.destination);
-
-
-        oscillator.start();
-
-        oscillator.stop(
-            audioContext.currentTime + 0.08
-        );
-
-    }
-
-    catch (error) {
-
-        console.log(
-            "Audio tidak tersedia."
-        );
-
-    }
-
-}
-
 
 
 /* =====================================================
-   MENU HP
+   MENU MOBILE
 ===================================================== */
 
-function toggleMenu() {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const navMenu =
-        document.getElementById("navMenu");
+    const navbar =
+        document.querySelector(".navbar");
 
-
-    navMenu.classList.toggle("active");
-
-}
+    const header =
+        document.querySelector(".header");
 
 
-/* Tutup menu HP setelah memilih menu */
+    if (navbar && header) {
 
-document.querySelectorAll(
-    ".nav-menu a"
-).forEach(function(link) {
+        let menuButton =
+            document.querySelector(".menu-toggle");
 
-    link.addEventListener(
-        "click",
-        function() {
 
-            document
-                .getElementById("navMenu")
-                .classList.remove("active");
+        if (!menuButton) {
+
+            menuButton =
+                document.createElement("button");
+
+            menuButton.className =
+                "menu-toggle";
+
+            menuButton.innerHTML = "☰";
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Buka menu"
+            );
+
+
+            header.insertBefore(
+                menuButton,
+                navbar
+            );
+
+
+            menuButton.addEventListener(
+                "click",
+                function () {
+
+                    navbar.classList.toggle(
+                        "show"
+                    );
+
+                }
+            );
 
         }
-    );
+
+
+        const links =
+            navbar.querySelectorAll("a");
+
+
+        links.forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    navbar.classList.remove(
+                        "show"
+                    );
+
+                }
+            );
+
+        });
+
+    }
 
 });
 
 
-
 /* =====================================================
-   DATA GALERI
+   GALERI DATA
 ===================================================== */
 
 const galleryData = [
 
     {
-        image: "images/sawah.jpg",
-
+        image: "sawah.jpg",
         title: "Hamparan Sawah",
-
         description:
-            "Pemandangan hamparan sawah yang menghiasi lingkungan Desa Seburing Hilir."
+            "Pemandangan hamparan sawah di Desa Seburing Hilir."
     },
 
-
     {
-        image: "images/cahaya-sore.jpg",
-
+        image: "cahaya-sore.jpg",
         title: "Cahaya Sore",
-
         description:
-            "Suasana sore dengan cahaya matahari yang terlihat di antara pepohonan."
+            "Suasana sore dengan cahaya matahari di desa."
     },
 
-
     {
-        image: "images/suasana-desa.jpg",
-
+        image: "suasana-desa.jpg",
         title: "Suasana Desa",
-
         description:
-            "Gambaran lingkungan dan suasana pedesaan Seburing Hilir."
+            "Suasana lingkungan pedesaan Desa Seburing Hilir."
     },
 
-
     {
-        image: "images/pohon-pisang.jpg",
-
-        title: "Tumbuhan Desa",
-
+        image: "pohon-pisang.jpg",
+        title: "Pohon Pisang",
         description:
-            "Salah satu tumbuhan yang tumbuh di lingkungan alami desa."
+            "Tumbuhan hijau yang dapat ditemukan di lingkungan desa."
     },
 
-
     {
-        image: "images/senja.jpg",
-
-        title: "Senja di Seburing Hilir",
-
+        image: "senja.jpg",
+        title: "Pemandangan Senja",
         description:
-            "Pemandangan langit senja yang memberikan suasana indah dan tenang."
+            "Keindahan langit sore di Desa Seburing Hilir."
     }
 
 ];
 
 
-let currentImage = 0;
-
-
-
 /* =====================================================
-   BUKA GALERI
+   GALERI
 ===================================================== */
 
-function openGallery(index) {
+document.addEventListener("DOMContentLoaded", function () {
 
-    menuSound();
-
-
-    currentImage = index;
-
-
-    updateGallery();
+    const gallery =
+        document.querySelector(
+            ".gallery-container"
+        );
 
 
-    const modal =
+    if (!gallery) return;
+
+
+    const images =
+        gallery.querySelectorAll("img");
+
+
+    images.forEach(function (image) {
+
+        image.style.cursor = "pointer";
+
+
+        image.addEventListener(
+            "click",
+            function () {
+
+                openGalleryImage(
+                    image.src,
+                    image.alt
+                );
+
+            }
+        );
+
+    });
+
+});
+
+
+function openGalleryImage(
+    imageSrc,
+    imageAlt
+) {
+
+    let modal =
         document.getElementById(
             "galleryModal"
         );
 
 
-    modal.classList.add("show");
+    if (!modal) {
 
+        modal =
+            document.createElement("div");
+
+        modal.id =
+            "galleryModal";
+
+        modal.innerHTML = `
+
+            <div class="gallery-modal-content">
+
+                <button
+                    class="gallery-modal-close"
+                    id="galleryModalClose"
+                >
+                    ×
+                </button>
+
+                <img
+                    id="galleryModalImage"
+                    src=""
+                    alt=""
+                >
+
+                <h3 id="galleryModalTitle"></h3>
+
+            </div>
+
+        `;
+
+
+        document.body.appendChild(modal);
+
+
+        document
+            .getElementById(
+                "galleryModalClose"
+            )
+            .addEventListener(
+                "click",
+                closeGalleryImage
+            );
+
+
+        modal.addEventListener(
+            "click",
+            function (event) {
+
+                if (event.target === modal) {
+
+                    closeGalleryImage();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    document
+        .getElementById(
+            "galleryModalImage"
+        )
+        .src = imageSrc;
+
+
+    document
+        .getElementById(
+            "galleryModalImage"
+        )
+        .alt = imageAlt;
+
+
+    document
+        .getElementById(
+            "galleryModalTitle"
+        )
+        .textContent = imageAlt;
+
+
+    modal.classList.add("active");
 
     document.body.style.overflow =
         "hidden";
@@ -212,12 +269,7 @@ function openGallery(index) {
 }
 
 
-
-/* =====================================================
-   TUTUP GALERI
-===================================================== */
-
-function closeGallery() {
+function closeGalleryImage() {
 
     const modal =
         document.getElementById(
@@ -225,183 +277,28 @@ function closeGallery() {
         );
 
 
-    modal.classList.remove("show");
+    if (!modal) return;
 
+
+    modal.classList.remove("active");
 
     document.body.style.overflow =
-        "auto";
+        "";
 
 }
 
 
-
 /* =====================================================
-   UPDATE FOTO
-===================================================== */
-
-function updateGallery() {
-
-    const data =
-        galleryData[currentImage];
-
-
-    document.getElementById(
-        "modalImage"
-    ).src = data.image;
-
-
-    document.getElementById(
-        "modalImage"
-    ).alt = data.title;
-
-
-    document.getElementById(
-        "modalTitle"
-    ).textContent = data.title;
-
-
-    document.getElementById(
-        "modalDescription"
-    ).textContent =
-        data.description;
-
-
-    document.getElementById(
-        "modalNumber"
-    ).textContent =
-        String(
-            currentImage + 1
-        ).padStart(2, "0");
-
-}
-
-
-
-/* =====================================================
-   FOTO SEBELUMNYA
-===================================================== */
-
-function previousImage() {
-
-    menuSound();
-
-
-    currentImage--;
-
-
-    if (currentImage < 0) {
-
-        currentImage =
-            galleryData.length - 1;
-
-    }
-
-
-    updateGallery();
-
-}
-
-
-
-/* =====================================================
-   FOTO BERIKUTNYA
-===================================================== */
-
-function nextImage() {
-
-    menuSound();
-
-
-    currentImage++;
-
-
-    if (
-        currentImage >=
-        galleryData.length
-    ) {
-
-        currentImage = 0;
-
-    }
-
-
-    updateGallery();
-
-}
-
-
-
-/* =====================================================
-   KLIK DI LUAR FOTO
-===================================================== */
-
-document
-    .getElementById("galleryModal")
-    .addEventListener(
-        "click",
-        function(event) {
-
-            if (
-                event.target === this
-            ) {
-
-                closeGallery();
-
-            }
-
-        }
-    );
-
-
-
-/* =====================================================
-   KEYBOARD
+   KEYBOARD GALERI
 ===================================================== */
 
 document.addEventListener(
     "keydown",
-    function(event) {
+    function (event) {
 
-        const modal =
-            document.getElementById(
-                "galleryModal"
-            );
+        if (event.key === "Escape") {
 
-
-        if (
-            !modal.classList.contains(
-                "show"
-            )
-        ) {
-
-            return;
-
-        }
-
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            closeGallery();
-
-        }
-
-
-        if (
-            event.key === "ArrowLeft"
-        ) {
-
-            previousImage();
-
-        }
-
-
-        if (
-            event.key === "ArrowRight"
-        ) {
-
-            nextImage();
+            closeGalleryImage();
 
         }
 
@@ -409,94 +306,156 @@ document.addEventListener(
 );
 
 
-
 /* =====================================================
-   TOMBOL KEMBALI KE ATAS
+   SCROLL KE ATAS
 ===================================================== */
 
-const topButton =
-    document.getElementById(
-        "topButton"
-    );
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const button =
+            document.createElement("button");
 
 
-window.addEventListener(
-    "scroll",
-    function() {
+        button.innerHTML = "↑";
 
-        if (
-            window.scrollY > 400
-        ) {
+        button.id =
+            "scrollTopButton";
 
-            topButton.classList.add(
-                "show"
-            );
+        button.setAttribute(
+            "aria-label",
+            "Kembali ke atas"
+        );
 
-        }
 
-        else {
+        document.body.appendChild(
+            button
+        );
 
-            topButton.classList.remove(
-                "show"
-            );
 
-        }
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (
+                    window.scrollY > 300
+                ) {
+
+                    button.classList.add(
+                        "show"
+                    );
+
+                } else {
+
+                    button.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
 
     }
 );
 
 
-
 /* =====================================================
-   KEMBALI KE ATAS
+   DATABASE GOOGLE SHEETS
 ===================================================== */
-
-function goTop() {
-
-    menuSound();
-
-
-    window.scrollTo({
-
-        top: 0,
-
-
-       // ================= DATABASE GOOGLE SHEETS =================
 
 async function loadDatabaseData() {
 
-    const container = document.getElementById("databaseData");
+    const container =
+        document.getElementById(
+            "databaseData"
+        );
+
 
     if (!container) return;
 
+
+    container.innerHTML =
+        "<p>Memuat data...</p>";
+
+
     try {
 
-        const response = await fetch(API_URL, {
+        /*
+         * Kita menggunakan GET.
+         * Ini lebih sederhana untuk website
+         * yang di-host di GitHub Pages.
+         */
 
-            method: "POST",
+        const response =
+            await fetch(
+                API_URL +
+                "?action=getData"
+            );
 
-            body: new URLSearchParams({
 
-                action: "getData"
+        if (!response.ok) {
 
-            })
+            throw new Error(
+                "HTTP error " +
+                response.status
+            );
 
-        });
+        }
 
-        const result = await response.json();
 
-        if (result.status !== "success") {
+        const result =
+            await response.json();
+
+
+        console.log(
+            "Hasil database:",
+            result
+        );
+
+
+        if (
+            result.status !==
+            "success"
+        ) {
 
             container.innerHTML =
-                "<p>Gagal mengambil data.</p>";
+                `
+                <p>
+                    Gagal mengambil data:
+                    ${escapeDatabaseHTML(
+                        result.message ||
+                        "Kesalahan API"
+                    )}
+                </p>
+                `;
 
             return;
 
         }
 
-        container.innerHTML = "";
 
-        if (!result.data || result.data.length === 0) {
+        if (
+            !result.data ||
+            result.data.length === 0
+        ) {
 
             container.innerHTML =
                 "<p>Belum ada data.</p>";
@@ -505,85 +464,147 @@ async function loadDatabaseData() {
 
         }
 
-        result.data.forEach(function(item) {
 
-            const card = document.createElement("div");
+        container.innerHTML = "";
 
-            card.className = "database-card";
 
-            card.innerHTML = `
+        result.data.forEach(
+            function (item) {
 
-                ${
+                const card =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                card.className =
+                    "database-card";
+
+
+                const imageHTML =
                     item.gambar
                     ?
                     `
                     <img
-                        src="${escapeDatabaseHTML(item.gambar)}"
-                        alt="${escapeDatabaseHTML(item.judul)}"
+                        src="${escapeDatabaseHTML(
+                            item.gambar
+                        )}"
+                        alt="${escapeDatabaseHTML(
+                            item.judul
+                        )}"
                     >
                     `
                     :
-                    ""
-                }
+                    "";
 
-                <div class="database-card-content">
 
-                    <small>
-                        ${escapeDatabaseHTML(item.kategori)}
-                    </small>
+                card.innerHTML = `
 
-                    <h3>
-                        ${escapeDatabaseHTML(item.judul)}
-                    </h3>
+                    ${imageHTML}
 
-                    <p>
-                        ${escapeDatabaseHTML(item.deskripsi)}
-                    </p>
+                    <div class="database-card-content">
 
-                </div>
+                        <small>
+                            ${escapeDatabaseHTML(
+                                item.kategori
+                            )}
+                        </small>
 
-            `;
+                        <h3>
+                            ${escapeDatabaseHTML(
+                                item.judul
+                            )}
+                        </h3>
 
-            container.appendChild(card);
+                        <p>
+                            ${escapeDatabaseHTML(
+                                item.deskripsi
+                            )}
+                        </p>
 
-        });
+                    </div>
+
+                `;
+
+
+                container.appendChild(
+                    card
+                );
+
+            }
+        );
+
 
     } catch (error) {
 
-        console.error("Database error:", error);
+        console.error(
+            "Kesalahan database:",
+            error
+        );
 
-        container.innerHTML =
-            "<p>Database tidak dapat diakses.</p>";
+
+        container.innerHTML = `
+
+            <p>
+                Database tidak dapat diakses.
+            </p>
+
+        `;
 
     }
-}
-
-
-function escapeDatabaseHTML(value) {
-
-    return String(value ?? "")
-
-        .replace(/&/g, "&amp;")
-
-        .replace(/</g, "&lt;")
-
-        .replace(/>/g, "&gt;")
-
-        .replace(/"/g, "&quot;")
-
-        .replace(/'/g, "&#039;");
 
 }
 
 
-document.addEventListener("DOMContentLoaded", function() {
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
 
-    loadDatabaseData();
+function escapeDatabaseHTML(
+    value
+) {
 
-});
+    return String(
+        value ?? ""
+    )
 
-        behavior: "smooth"
+        .replace(
+            /&/g,
+            "&amp;"
+        )
 
-    });
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
 }
+
+
+/* =====================================================
+   LOAD DATABASE SAAT HALAMAN DIBUKA
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        loadDatabaseData();
+
+    }
+);
