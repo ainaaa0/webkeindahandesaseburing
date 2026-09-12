@@ -1,405 +1,331 @@
+/* ===============================
+   GALLERY MODAL
+================================ */
 
-                <h3 id="galleryModalTitle"></h3>
+function openGalleryImage(imageSrc, imageAlt) {
+  const modal = document.getElementById("galleryModal");
 
-            </div>
+  if (!modal) return;
 
-        `;
+  const image = document.getElementById("galleryModalImage");
+  const title = document.getElementById("galleryModalTitle");
 
+  if (image) {
+    image.src = imageSrc;
+    image.alt = imageAlt || "";
+  }
 
-        document.body.appendChild(modal);
+  if (title) {
+    title.textContent = imageAlt || "";
+  }
 
-
-        document
-            .getElementById(
-                "galleryModalClose"
-            )
-            .addEventListener(
-                "click",
-                closeGalleryImage
-            );
-
-
-        modal.addEventListener(
-            "click",
-            function (event) {
-
-                if (event.target === modal) {
-
-                    closeGalleryImage();
-
-                }
-
-            }
-        );
-
-    }
-
-
-    document
-        .getElementById(
-            "galleryModalImage"
-        )
-        .src = imageSrc;
-
-
-    document
-        .getElementById(
-            "galleryModalImage"
-        )
-        .alt = imageAlt;
-
-
-    document
-        .getElementById(
-            "galleryModalTitle"
-        )
-        .textContent = imageAlt;
-
-
-    modal.classList.add("active");
-
-    document.body.style.overflow =
-        "hidden";
-
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
-
 
 function closeGalleryImage() {
+  const modal = document.getElementById("galleryModal");
 
-    const modal =
-        document.getElementById(
-            "galleryModal"
-        );
+  if (!modal) return;
 
-
-    if (!modal) return;
-
-
-    modal.classList.remove("active");
-
-    document.body.style.overflow =
-        "";
-
+  modal.classList.remove("active");
+  document.body.style.overflow = "";
 }
 
 
-/* =====================================================
-   KEYBOARD GALERI
-===================================================== */
+/* ===============================
+   GALLERY CLICK
+================================ */
 
-document.addEventListener(
-    "keydown",
-    function (event) {
+document.addEventListener("DOMContentLoaded", function () {
+  const galleryImages = document.querySelectorAll(".gallery-item img");
 
-        if (event.key === "Escape") {
+  galleryImages.forEach(function (image) {
+    image.addEventListener("click", function () {
+      openGalleryImage(
+        image.src,
+        image.alt
+      );
+    });
+  });
 
-            closeGalleryImage();
+  const modal = document.getElementById("galleryModal");
 
-        }
+  if (modal) {
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        closeGalleryImage();
+      }
+    });
+  }
+});
 
-    }
-);
+
+/* ===============================
+   KEYBOARD GALLERY
+================================ */
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeGalleryImage();
+  }
+});
 
 
-/* =====================================================
+/* ===============================
    SCROLL KE ATAS
-===================================================== */
+================================ */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.createElement("button");
 
-        const button =
-            document.createElement("button");
+  button.innerHTML = "↑";
+  button.id = "scrollTopButton";
+  button.setAttribute("aria-label", "Kembali ke atas");
 
+  document.body.appendChild(button);
 
-        button.innerHTML = "↑";
-
-        button.id =
-            "scrollTopButton";
-
-        button.setAttribute(
-            "aria-label",
-            "Kembali ke atas"
-        );
-
-
-        document.body.appendChild(
-            button
-        );
-
-
-        window.addEventListener(
-            "scroll",
-            function () {
-
-                if (
-                    window.scrollY > 300
-                ) {
-
-                    button.classList.add(
-                        "show"
-                    );
-
-                } else {
-
-                    button.classList.remove(
-                        "show"
-                    );
-
-                }
-
-            }
-        );
-
-
-        button.addEventListener(
-            "click",
-            function () {
-
-                window.scrollTo({
-
-                    top: 0,
-
-                    behavior: "smooth"
-
-                });
-
-            }
-        );
-
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      button.classList.add("show");
+    } else {
+      button.classList.remove("show");
     }
-);
+  });
+
+  button.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
 
 
-/* =====================================================
-   DATABASE GOOGLE SHEETS
-===================================================== */
+/* ===============================
+   DATABASE GOOGLE SHEET
+================================ */
 
 async function loadDatabaseData() {
+  const container = document.getElementById("databaseData");
 
-    const container =
+  if (!container) return;
+
+  container.innerHTML = "Memuat data...";
+
+  try {
+    const response = await fetch(
+      API_URL + "?action=getData"
+    );
+
+    if (!response.ok) {
+      throw new Error(
+        "HTTP error " + response.status
+      );
+    }
+
+    const result = await response.json();
+
+    console.log("Data dari API:", result);
+
+    if (
+      result.status !== "success" ||
+      !Array.isArray(result.data)
+    ) {
+      throw new Error(
+        result.message || "Data tidak valid"
+      );
+    }
+
+    if (result.data.length === 0) {
+      container.innerHTML =
+        "<p>Belum ada data desa.</p>";
+      return;
+    }
+
+    container.innerHTML = "";
+
+    result.data.forEach(function (item) {
+      const card = document.createElement("div");
+
+      card.className = "database-card";
+
+      card.innerHTML = `
+        <div class="database-image">
+          ${
+            item.gambar
+              ? `<img src="${item.gambar}" alt="${item.judul || "Data Desa"}">`
+              : ""
+          }
+        </div>
+
+        <div class="database-content">
+          <span class="database-category">
+            ${item.kategori || ""}
+          </span>
+
+          <h3>
+            ${item.judul || ""}
+          </h3>
+
+          <p>
+            ${item.deskripsi || ""}
+          </p>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error(
+      "Gagal mengambil data:",
+      error
+    );
+
+    container.innerHTML = `
+      <p>
+        Data belum dapat dimuat.
+      </p>
+    `;
+  }
+}
+
+
+/* ===============================
+   SARAN & MASUKAN
+================================ */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form =
+    document.getElementById("saranForm");
+
+  if (!form) return;
+
+  form.addEventListener(
+    "submit",
+    async function (event) {
+
+      event.preventDefault();
+
+      const nama =
         document.getElementById(
-            "databaseData"
+          "namaSaran"
+        ).value.trim();
+
+      const kategori =
+        document.getElementById(
+          "kategoriSaran"
+        ).value;
+
+      const pesan =
+        document.getElementById(
+          "pesanSaran"
+        ).value.trim();
+
+      const status =
+        document.getElementById(
+          "statusSaran"
         );
 
+      if (!nama || !kategori || !pesan) {
+        status.textContent =
+          "Mohon lengkapi semua data.";
+        return;
+      }
 
-    if (!container) return;
+      status.textContent =
+        "Mengirim masukan...";
 
+      try {
 
-    container.innerHTML =
-        "<p>Memuat data...</p>";
+        const data =
+          new URLSearchParams();
 
+        data.append(
+          "action",
+          "saran"
+        );
 
-    try {
+        data.append(
+          "nama",
+          nama
+        );
 
-        /*
-         * Kita menggunakan GET.
-         * Ini lebih sederhana untuk website
-         * yang di-host di GitHub Pages.
-         */
+        data.append(
+          "kategori",
+          kategori
+        );
+
+        data.append(
+          "pesan",
+          pesan
+        );
 
         const response =
-            await fetch(
-                API_URL +
-                "?action=getData"
-            );
-
+          await fetch(
+            API_URL,
+            {
+              method: "POST",
+              body: data
+            }
+          );
 
         if (!response.ok) {
-
-            throw new Error(
-                "HTTP error " +
-                response.status
-            );
-
+          throw new Error(
+            "HTTP error " +
+            response.status
+          );
         }
-
 
         const result =
-            await response.json();
-
+          await response.json();
 
         console.log(
-            "Hasil database:",
-            result
+          "Hasil kirim saran:",
+          result
         );
 
-
         if (
-            result.status !==
-            "success"
+          result.status ===
+          "success"
         ) {
 
-            container.innerHTML =
-                `
-                <p>
-                    Gagal mengambil data:
-                    ${escapeDatabaseHTML(
-                        result.message ||
-                        "Kesalahan API"
-                    )}
-                </p>
-                `;
+          status.textContent =
+            "Saran dan masukan berhasil dikirim. Terima kasih!";
 
-            return;
+          form.reset();
+
+        } else {
+
+          status.textContent =
+            result.message ||
+            "Gagal mengirim masukan.";
 
         }
 
-
-        if (
-            !result.data ||
-            result.data.length === 0
-        ) {
-
-            container.innerHTML =
-                "<p>Belum ada data.</p>";
-
-            return;
-
-        }
-
-
-        container.innerHTML = "";
-
-
-        result.data.forEach(
-            function (item) {
-
-                const card =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                card.className =
-                    "database-card";
-
-
-                const imageHTML =
-                    item.gambar
-                    ?
-                    `
-                    <img
-                        src="${escapeDatabaseHTML(
-                            item.gambar
-                        )}"
-                        alt="${escapeDatabaseHTML(
-                            item.judul
-                        )}"
-                    >
-                    `
-                    :
-                    "";
-
-
-                card.innerHTML = `
-
-                    ${imageHTML}
-
-                    <div class="database-card-content">
-
-                        <small>
-                            ${escapeDatabaseHTML(
-                                item.kategori
-                            )}
-                        </small>
-
-                        <h3>
-                            ${escapeDatabaseHTML(
-                                item.judul
-                            )}
-                        </h3>
-
-                        <p>
-                            ${escapeDatabaseHTML(
-                                item.deskripsi
-                            )}
-                        </p>
-
-                    </div>
-
-                `;
-
-
-                container.appendChild(
-                    card
-                );
-
-            }
-        );
-
-
-    } catch (error) {
+      } catch (error) {
 
         console.error(
-            "Kesalahan database:",
-            error
+          "Kesalahan mengirim saran:",
+          error
         );
 
-
-        container.innerHTML = `
-
-            <p>
-                Database tidak dapat diakses.
-            </p>
-
-        `;
-
+        status.textContent =
+          "Saran gagal dikirim. Silakan coba lagi.";
+      }
     }
-
-}
-
-
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
-
-function escapeDatabaseHTML(
-    value
-) {
-
-    return String(
-        value ?? ""
-    )
-
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-
-        .replace(
-            /</g,
-            "&lt;"
-        )
-
-        .replace(
-            />/g,
-            "&gt;"
-        )
-
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-
-        .replace(
-            /'/g,
-            "&#039;"
-        );
-
-}
+  );
+});
 
 
-/* =====================================================
-   LOAD DATABASE SAAT HALAMAN DIBUKA
-===================================================== */
+/* ===============================
+   JALANKAN DATABASE
+================================ */
 
 document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        loadDatabaseData();
-
-    }
+  "DOMContentLoaded",
+  function () {
+    loadDatabaseData();
+  }
 );
