@@ -235,6 +235,83 @@
 
 </section>
 
+    <!-- ================= SARAN & MASUKAN ================= -->
+<section class="saran-section">
+
+  <div class="saran-container">
+
+    <p class="small-title">SUARA MASYARAKAT</p>
+
+    <h2>Saran & Masukan Masyarakat</h2>
+
+    <p class="saran-description">
+      Sampaikan saran, masukan, atau ide untuk membantu
+      memberikan informasi dan pengembangan desa.
+    </p>
+
+    <form id="saranForm" class="saran-form">
+
+      <div class="saran-form-group">
+        <label for="namaSaran">Nama</label>
+
+        <input
+          type="text"
+          id="namaSaran"
+          name="nama"
+          placeholder="Masukkan nama"
+          required
+        >
+      </div>
+
+
+      <div class="saran-form-group">
+        <label for="kategoriSaran">Kategori</label>
+
+        <select
+          id="kategoriSaran"
+          name="kategori"
+          required
+        >
+          <option value="">Pilih kategori</option>
+          <option value="Saran">Saran</option>
+          <option value="Masukan">Masukan</option>
+          <option value="Ide">Ide</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+      </div>
+
+
+      <div class="saran-form-group">
+        <label for="pesanSaran">Pesan</label>
+
+        <textarea
+          id="pesanSaran"
+          name="pesan"
+          rows="5"
+          placeholder="Tuliskan saran atau masukan kamu..."
+          required
+        ></textarea>
+      </div>
+
+
+      <button
+        type="submit"
+        class="saran-button"
+      >
+        Kirim Masukan
+      </button>
+
+      <p
+        id="statusSaran"
+        class="status-saran"
+      ></p>
+
+    </form>
+
+  </div>
+
+</section>
+
 
 <!-- ================= AJAKAN ================= -->
 <section class="quote">
