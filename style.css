@@ -2046,3 +2046,250 @@ footer > p {
     opacity: 1;
     text-decoration: underline;
 }
+
+
+/* =====================================================
+   SARAN & MASUKAN MASYARAKAT
+===================================================== */
+
+.saran-section {
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f2f9f4,
+            #eaf5ee
+        );
+
+}
+
+
+.saran-container {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    text-align: center;
+
+}
+
+
+.saran-container h2 {
+
+    color: #176b45;
+
+    font-size: 38px;
+
+    line-height: 1.25;
+
+    margin-bottom: 10px;
+
+}
+
+
+.saran-description {
+
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    color: #647169;
+
+}
+
+
+.saran-form {
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.08);
+
+    text-align: left;
+
+}
+
+
+.saran-form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.saran-form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #176b45;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.saran-form-group input,
+.saran-form-group select,
+.saran-form-group textarea {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #d7e3db;
+
+    border-radius: 10px;
+
+    background: #fbfdfb;
+
+    color: #26352d;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+
+}
+
+
+.saran-form-group input:focus,
+.saran-form-group select:focus,
+.saran-form-group textarea:focus {
+
+    border-color: #58a878;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(88,168,120,0.12);
+
+}
+
+
+.saran-form-group textarea {
+
+    resize: vertical;
+
+    min-height: 130px;
+
+}
+
+
+.saran-button {
+
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #176b45;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.saran-button:hover {
+
+    background: #23804e;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 18px
+        rgba(23,107,69,0.2);
+
+}
+
+
+.status-saran {
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: #176b45;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    min-height: 24px;
+
+}
+
+
+/* =========================
+   SARAN - MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .saran-section {
+
+        padding: 60px 18px;
+
+    }
+
+
+    .saran-container h2 {
+
+        font-size: 29px;
+
+    }
+
+
+    .saran-description {
+
+        font-size: 14px;
+
+    }
+
+
+    .saran-form {
+
+        padding: 22px;
+
+        border-radius: 16px;
+
+    }
+
+
+    .saran-form-group input,
+    .saran-form-group select,
+    .saran-form-group textarea {
+
+        font-size: 14px;
+
+    }
+
+}
