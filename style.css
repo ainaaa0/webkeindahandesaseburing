@@ -1417,3 +1417,537 @@ textarea {
     }
 
 }
+
+/* =====================================================
+   PENYEMPURNAAN BERANDA
+===================================================== */
+
+
+/* =====================================================
+   PESONA DESA
+===================================================== */
+
+.features {
+    position: relative;
+    overflow: hidden;
+}
+
+.features::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    top: -120px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(112, 186, 142, 0.10);
+}
+
+.features::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    bottom: -120px;
+    left: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(243, 210, 122, 0.10);
+}
+
+.section-title,
+.feature-container {
+    position: relative;
+    z-index: 2;
+}
+
+.feature-card {
+    position: relative;
+
+    min-height: 260px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px 28px;
+
+    background: #fffefb;
+
+    border: 1px solid #e0ebe3;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 8px 25px rgba(20, 70, 45, 0.06);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #b9d9c3;
+
+    box-shadow:
+        0 18px 40px rgba(20, 70, 45, 0.13);
+}
+
+.feature-icon {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #d8e9dd;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef8f1,
+            #e2f1e7
+        );
+
+    font-size: 31px;
+
+    box-shadow:
+        0 6px 18px rgba(20, 70, 45, 0.07);
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+
+    color: #176b45;
+
+    font-size: 21px;
+}
+
+.feature-card p {
+    max-width: 260px;
+
+    color: #69756e;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   DATABASE DESA
+===================================================== */
+
+.database-section {
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffdf8 0%,
+            #f8faf6 100%
+        );
+}
+
+.database-container {
+    position: relative;
+}
+
+.database-container h2 {
+    margin-bottom: 12px;
+}
+
+#databaseData {
+    margin-top: 42px;
+}
+
+.database-card {
+    position: relative;
+
+    border: 1px solid #e0e9e3;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(20, 70, 45, 0.06);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.database-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 38px rgba(20, 70, 45, 0.12);
+}
+
+.database-card img {
+    height: 220px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.database-card:hover img {
+    transform: scale(1.04);
+}
+
+.database-card-content {
+    padding: 22px 22px 24px;
+}
+
+.database-card-content small {
+    display: inline-block;
+
+    margin-bottom: 5px;
+
+    padding: 4px 10px;
+
+    border-radius: 20px;
+
+    background: #edf7ef;
+
+    color: #4f986e;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.database-card-content h3 {
+    margin: 8px 0 9px;
+
+    color: #176b45;
+
+    font-size: 20px;
+
+    line-height: 1.3;
+}
+
+.database-card-content p {
+    color: #68736d;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   SARAN & MASUKAN
+===================================================== */
+
+.saran-section {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.saran-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    top: -170px;
+    left: -120px;
+
+    border-radius: 50%;
+
+    background: rgba(112, 186, 142, 0.10);
+}
+
+.saran-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    right: -100px;
+    bottom: -130px;
+
+    border-radius: 50%;
+
+    background: rgba(243, 210, 122, 0.10);
+}
+
+.saran-container {
+    position: relative;
+
+    z-index: 2;
+}
+
+.saran-container h2 {
+    margin-bottom: 12px;
+}
+
+.saran-form {
+    position: relative;
+
+    padding: 38px;
+
+    border: 1px solid #dce9e1;
+
+    border-radius: 24px;
+
+    background: rgba(255,255,255,0.98);
+
+    box-shadow:
+        0 15px 45px rgba(20, 70, 45, 0.09);
+}
+
+.saran-form::before {
+    content: "💬";
+
+    position: absolute;
+
+    top: -18px;
+    left: 50%;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateX(-50%);
+
+    border: 5px solid #edf7ef;
+
+    border-radius: 50%;
+
+    background: #176b45;
+
+    font-size: 18px;
+}
+
+.saran-form-group {
+    margin-bottom: 21px;
+}
+
+.saran-form-group label {
+    margin-bottom: 8px;
+
+    font-size: 13px;
+}
+
+.saran-form-group input,
+.saran-form-group select,
+.saran-form-group textarea {
+    border: 1px solid #d5e2da;
+
+    border-radius: 12px;
+
+    background: #fbfdfb;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.saran-form-group input:hover,
+.saran-form-group select:hover,
+.saran-form-group textarea:hover {
+    border-color: #b9d4c2;
+}
+
+.saran-form-group input:focus,
+.saran-form-group select:focus,
+.saran-form-group textarea:focus {
+    border-color: #58a878;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(88,168,120,0.10);
+}
+
+.saran-button {
+    margin-top: 4px;
+
+    box-shadow:
+        0 8px 20px rgba(23,107,69,0.15);
+}
+
+.status-saran {
+    padding-top: 2px;
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.quote {
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d5436,
+            #176b45,
+            #1d754c
+        );
+}
+
+.quote::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    right: -100px;
+    bottom: -130px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 50%;
+}
+
+.quote-content {
+    padding: 10px;
+}
+
+.quote-content p {
+    font-size: 24px;
+}
+
+.quote-content span {
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    border: 1px solid rgba(243,210,122,0.35);
+
+    border-radius: 20px;
+
+    background: rgba(243,210,122,0.08);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0c4c31,
+            #093b27
+        );
+}
+
+.footer-logo {
+    color: white;
+}
+
+.footer-line {
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 12px rgba(243,210,122,0.18);
+}
+
+.admin-link {
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    transition: 0.3s ease;
+}
+
+.admin-link:hover {
+    background: rgba(255,255,255,0.08);
+
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   MOBILE PENYEMPURNAAN
+===================================================== */
+
+@media (max-width: 760px) {
+
+    .feature-card {
+        min-height: 230px;
+
+        padding: 30px 22px;
+    }
+
+    .database-card img {
+        height: 210px;
+    }
+
+    .saran-form {
+        padding: 32px 22px 25px;
+    }
+
+    .quote-content p {
+        font-size: 19px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .feature-icon {
+        width: 65px;
+        height: 65px;
+
+        font-size: 28px;
+    }
+
+    .database-card-content {
+        padding: 19px;
+    }
+
+    .database-card img {
+        height: 195px;
+    }
+
+    .saran-form {
+        padding: 30px 17px 22px;
+    }
+
+    .quote-content p {
+        font-size: 17px;
+    }
+
+}
