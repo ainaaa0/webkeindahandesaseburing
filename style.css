@@ -2473,123 +2473,94 @@ img,
 iframe {
     max-width: 100%;
    }
-
 /* =========================================================
-   HEADER HALAMAN DALAM
-   TENTANG • ALAM • GALERI • LOKASI
+   HEADER & NAVBAR UNTUK SEMUA HALAMAN
    ========================================================= */
 
-/* HEADER */
-body:not(.home-page) header {
-    background: #145b3d;
-    padding: 18px 22px 20px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+body > header:not(.header) {
+    background: #075b3b;
+    color: white;
+    padding: 24px 25px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
-/* LOGO */
-body:not(.home-page) header .logo {
-    color: #ffffff;
+body > header:not(.header) .logo {
+    color: white;
     font-size: 27px;
     font-weight: 800;
-    text-align: center;
-    margin-bottom: 18px;
+    white-space: nowrap;
 }
 
-/* NAVIGASI */
-body:not(.home-page) header nav {
-    max-width: 900px;
-    margin: 0 auto;
-
+body > header:not(.header) nav {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    gap: 8px;
     flex-wrap: wrap;
-
-    gap: 9px;
 }
 
-/* MENU */
-body:not(.home-page) header nav a {
-    display: flex;
+body > header:not(.header) nav a {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    min-height: 44px;
-    padding: 10px 17px;
-
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.10);
-
-    border-radius: 13px;
-
+    padding: 12px 18px;
+    border-radius: 12px;
+    color: white;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
-
     transition: all 0.25s ease;
 }
 
-/* MENU AKTIF */
-body:not(.home-page) header nav a.active {
-    background: #f4d276;
-    color: #24583f;
+body > header:not(.header) nav a:hover {
+    background: rgba(255,255,255,0.12);
 }
 
-/* HOVER */
-body:not(.home-page) header nav a:hover {
-    background: rgba(255, 255, 255, 0.18);
-    transform: translateY(-2px);
+body > header:not(.header) nav a.active {
+    background: #f4d477;
+    color: #285943;
 }
 
-
-/* =========================================================
+/* =========================
    TAMPILAN HP
-   ========================================================= */
+   ========================= */
 
 @media (max-width: 768px) {
 
-    body:not(.home-page) header {
-        padding: 17px 15px 18px;
+    body > header:not(.header) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 28px 15px 22px;
+        gap: 20px;
     }
 
-    body:not(.home-page) header .logo {
-        font-size: 25px;
-        margin-bottom: 16px;
-    }
-
-    body:not(.home-page) header nav {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        width: 100%;
-    }
-
-    body:not(.home-page) header nav a {
-        min-height: 44px;
-        padding: 8px 4px;
-
-        border-radius: 12px;
-
-        font-size: 13px;
+    body > header:not(.header) .logo {
+        font-size: 26px;
         text-align: center;
-        white-space: nowrap;
-    }
-}
-
-
-/* HP KECIL */
-@media (max-width: 380px) {
-
-    body:not(.home-page) header .logo {
-        font-size: 23px;
     }
 
-    body:not(.home-page) header nav {
-        gap: 6px;
+    body > header:not(.header) nav {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
-    body:not(.home-page) header nav a {
-        font-size: 12px;
-        padding: 8px 3px;
+    body > header:not(.header) nav a {
+        min-height: 46px;
+        padding: 10px 8px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    body > header:not(.header) nav a.active {
+        background: #f4d477;
+        color: #285943;
     }
 }
