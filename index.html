@@ -1,12 +1,30 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Desa Seburing Hilir | Keindahan Desa</title>
 
-<!-- Menghubungkan CSS -->
-<link rel="stylesheet" href="style.css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-</head><body><!-- ================= HEADER ================= -->
+    <title>Desa Seburing Hilir | Keindahan Desa</title>
+
+    <!-- Menghubungkan CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- IKON WEBSITE / FAVICON -->
+    <link rel="icon"
+          type="image/svg+xml"
+          href="favicon.svg">
+
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
 <header class="header">
 
     <div class="logo">
@@ -46,6 +64,7 @@
 
 
 <!-- ================= HERO ================= -->
+
 <section class="hero">
 
     <div class="hero-content">
@@ -70,7 +89,8 @@
                 📸 Lihat Galeri
             </a>
 
-            <a href="tentang.html" class="button button-outline">
+            <a href="tentang.html"
+               class="button button-outline">
                 🌿 Tentang Desa
             </a>
 
@@ -82,6 +102,7 @@
 
 
 <!-- ================= SAMBUTAN ================= -->
+
 <section class="intro">
 
     <div class="intro-text">
@@ -127,6 +148,7 @@
 
 
 <!-- ================= KEUNGGULAN ================= -->
+
 <section class="features">
 
     <div class="section-title">
@@ -149,7 +171,9 @@
 
     <div class="feature-container">
 
-        <!-- Card 1 -->
+
+        <!-- CARD 1 -->
+
         <div class="feature-card">
 
             <div class="feature-icon">
@@ -168,7 +192,8 @@
         </div>
 
 
-        <!-- Card 2 -->
+        <!-- CARD 2 -->
+
         <div class="feature-card">
 
             <div class="feature-icon">
@@ -187,7 +212,8 @@
         </div>
 
 
-        <!-- Card 3 -->
+        <!-- CARD 3 -->
+
         <div class="feature-card">
 
             <div class="feature-icon">
@@ -211,6 +237,7 @@
 
 
 <!-- ================= DATABASE ================= -->
+
 <section class="database-section">
 
     <div class="database-container">
@@ -235,85 +262,123 @@
 
 </section>
 
-    <!-- ================= SARAN & MASUKAN ================= -->
+
+<!-- ================= SARAN & MASUKAN ================= -->
+
 <section class="saran-section">
 
-  <div class="saran-container">
+    <div class="saran-container">
 
-    <p class="small-title">SUARA MASYARAKAT</p>
+        <p class="small-title">
+            SUARA MASYARAKAT
+        </p>
 
-    <h2>Saran & Masukan Masyarakat</h2>
+        <h2>
+            Saran & Masukan Masyarakat
+        </h2>
 
-    <p class="saran-description">
-      Sampaikan saran, masukan, atau ide untuk membantu
-      memberikan informasi dan pengembangan desa.
-    </p>
-
-    <form id="saranForm" class="saran-form">
-
-      <div class="saran-form-group">
-        <label for="namaSaran">Nama</label>
-
-        <input
-          type="text"
-          id="namaSaran"
-          name="nama"
-          placeholder="Masukkan nama"
-          required
-        >
-      </div>
+        <p class="saran-description">
+            Sampaikan saran, masukan, atau ide untuk membantu
+            memberikan informasi dan pengembangan desa.
+        </p>
 
 
-      <div class="saran-form-group">
-        <label for="kategoriSaran">Kategori</label>
-
-        <select
-          id="kategoriSaran"
-          name="kategori"
-          required
-        >
-          <option value="">Pilih kategori</option>
-          <option value="Saran">Saran</option>
-          <option value="Masukan">Masukan</option>
-          <option value="Ide">Ide</option>
-          <option value="Lainnya">Lainnya</option>
-        </select>
-      </div>
+        <form id="saranForm" class="saran-form">
 
 
-      <div class="saran-form-group">
-        <label for="pesanSaran">Pesan</label>
+            <div class="saran-form-group">
 
-        <textarea
-          id="pesanSaran"
-          name="pesan"
-          rows="5"
-          placeholder="Tuliskan saran atau masukan kamu..."
-          required
-        ></textarea>
-      </div>
+                <label for="namaSaran">
+                    Nama
+                </label>
+
+                <input
+                    type="text"
+                    id="namaSaran"
+                    name="nama"
+                    placeholder="Masukkan nama"
+                    required
+                >
+
+            </div>
 
 
-      <button
-        type="submit"
-        class="saran-button"
-      >
-        Kirim Masukan
-      </button>
+            <div class="saran-form-group">
 
-      <p
-        id="statusSaran"
-        class="status-saran"
-      ></p>
+                <label for="kategoriSaran">
+                    Kategori
+                </label>
 
-    </form>
+                <select
+                    id="kategoriSaran"
+                    name="kategori"
+                    required
+                >
 
-  </div>
+                    <option value="">
+                        Pilih kategori
+                    </option>
+
+                    <option value="Saran">
+                        Saran
+                    </option>
+
+                    <option value="Masukan">
+                        Masukan
+                    </option>
+
+                    <option value="Ide">
+                        Ide
+                    </option>
+
+                    <option value="Lainnya">
+                        Lainnya
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="saran-form-group">
+
+                <label for="pesanSaran">
+                    Pesan
+                </label>
+
+                <textarea
+                    id="pesanSaran"
+                    name="pesan"
+                    rows="5"
+                    placeholder="Tuliskan saran atau masukan kamu..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="saran-button"
+            >
+                Kirim Masukan
+            </button>
+
+
+            <p
+                id="statusSaran"
+                class="status-saran"
+            ></p>
+
+        </form>
+
+    </div>
 
 </section>
 
 
 <!-- ================= AJAKAN ================= -->
+
 <section class="quote">
 
     <div class="quote-content">
@@ -334,6 +399,7 @@
 
 
 <!-- ================= FOOTER ================= -->
+
 <footer class="footer">
 
     <div class="footer-logo">
@@ -355,15 +421,21 @@
         © 2026 Website Keindahan Desa Seburing Hilir
     </p>
 
-    <a href="admin.html" class="admin-link">Login Admin</a>
+    <a href="admin.html" class="admin-link">
+        Login Admin
+    </a>
 
 </footer>
 
 
-<!-- JavaScript -->
+<!-- ================= JAVASCRIPT ================= -->
+
 <!-- config.js HARUS sebelum script.js -->
+
 <script src="config.js"></script>
+
 <script src="script.js"></script>
+
 
 </body>
 </html>
