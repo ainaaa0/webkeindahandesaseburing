@@ -7,10 +7,421 @@
 
     <title>Tentang Desa Seburing Hilir</title>
 
-    <link rel="stylesheet" href="gaya.css">
+    <link rel="stylesheet" href="./gaya.css?v=4">
+
+    <style>
+        /* ===============================
+           HEADER
+           =============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #36483c;
+            background: #ffffff;
+        }
+
+        .header {
+            width: 100%;
+            padding: 18px 25px;
+            background: #285943;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .navbar a {
+            display: inline-block;
+            padding: 10px 16px;
+            color: #ffffff;
+            background: #347052;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background: #426f55;
+            transform: translateY(-2px);
+        }
+
+        .navbar a.active {
+            color: #285943;
+            background: #e4c66b;
+        }
+
+
+        /* ===============================
+           HEADER HALAMAN
+           =============================== */
+
+        .page-header {
+            padding: 75px 20px 65px;
+            text-align: center;
+            background: linear-gradient(135deg, #edf5ea, #faf6e9);
+            border-bottom: 1px solid #e3eadf;
+        }
+
+        .page-header-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .page-header p:first-child {
+            margin: 0 0 12px;
+            color: #b18a28;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .page-header h1 {
+            margin: 0;
+            color: #285943;
+            font-size: 42px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .page-header p:last-child {
+            max-width: 650px;
+            margin: 18px auto 0;
+            color: #68736b;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* ===============================
+           TENTANG DESA
+           =============================== */
+
+        .about {
+            max-width: 1150px;
+            margin: auto;
+            padding: 80px 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(39, 76, 52, 0.13);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 430px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            margin: 8px 0 22px;
+            color: #285943;
+            font-size: 38px;
+            line-height: 1.2;
+        }
+
+        .about-text > p {
+            color: #5d6961;
+            font-size: 16px;
+            line-height: 1.85;
+            margin: 0 0 17px;
+        }
+
+        .small-title {
+            color: #b18a28 !important;
+            font-size: 13px !important;
+            font-weight: 800 !important;
+            letter-spacing: 2px;
+            margin-bottom: 8px !important;
+        }
+
+        .info-box {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 14px;
+            padding: 16px 18px;
+            background: #f5f8f2;
+            border-left: 4px solid #d1a83c;
+            border-radius: 12px;
+        }
+
+        .info-box strong {
+            color: #285943;
+            font-size: 15px;
+        }
+
+        .info-box span {
+            color: #68736b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+
+        /* ===============================
+           KEHIDUPAN DESA
+           =============================== */
+
+        .features {
+            padding: 80px 25px;
+            background: #f7f9f5;
+        }
+
+        .section-title {
+            max-width: 750px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            margin: 8px 0 16px;
+            color: #285943;
+            font-size: 36px;
+        }
+
+        .section-title > p:last-child {
+            color: #68736b;
+            line-height: 1.8;
+        }
+
+        .feature-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            padding: 30px 25px;
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid #e5ebe2;
+            border-radius: 20px;
+            box-shadow: 0 10px 28px rgba(39, 76, 52, 0.08);
+        }
+
+        .feature-icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e7f0e3;
+            border-radius: 18px;
+            font-size: 30px;
+        }
+
+        .feature-card h3 {
+            margin: 0 0 12px;
+            color: #285943;
+            font-size: 21px;
+        }
+
+        .feature-card p {
+            margin: 0;
+            color: #68736b;
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+
+        /* ===============================
+           QUOTE
+           =============================== */
+
+        .quote {
+            padding: 80px 25px;
+            text-align: center;
+            background: #285943;
+        }
+
+        .quote-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .quote p {
+            margin: 0 0 20px;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .quote span {
+            color: #e4c66b;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+
+        /* ===============================
+           FOOTER
+           =============================== */
+
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            background: #1f4634;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .footer-logo {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .footer-line {
+            width: 70px;
+            height: 2px;
+            margin: 0 auto 18px;
+            background: #d1a83c;
+        }
+
+        .footer p {
+            margin: 6px 0;
+            font-size: 14px;
+        }
+
+        .footer .copyright {
+            margin-top: 15px;
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        .admin-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #e4c66b;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+
+        /* ===============================
+           MOBILE
+           =============================== */
+
+        @media (max-width: 768px) {
+
+            .header {
+                padding: 16px 12px;
+                gap: 14px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .navbar {
+                gap: 8px;
+            }
+
+            .navbar a {
+                padding: 9px 12px;
+                font-size: 13px;
+            }
+
+            .page-header {
+                padding: 55px 20px 50px;
+            }
+
+            .page-header h1 {
+                font-size: 31px;
+            }
+
+            .page-header p:last-child {
+                font-size: 14px;
+            }
+
+            .about {
+                display: flex;
+                flex-direction: column;
+                gap: 35px;
+                padding: 55px 20px;
+            }
+
+            .about-image {
+                width: 100%;
+            }
+
+            .about-image img {
+                height: 300px;
+            }
+
+            .about-text h2 {
+                font-size: 30px;
+            }
+
+            .about-text > p {
+                font-size: 15px;
+            }
+
+            .features {
+                padding: 60px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 29px;
+            }
+
+            .feature-container {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .quote {
+                padding: 60px 20px;
+            }
+
+            .quote p {
+                font-size: 20px;
+            }
+
+            .footer {
+                padding: 35px 20px;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
+
 
 <!-- ================= HEADER ================= -->
 
@@ -278,7 +689,7 @@
 </footer>
 
 
-<script src="script.js"></script>
+<script src="./script.js"></script>
 
 </body>
 
