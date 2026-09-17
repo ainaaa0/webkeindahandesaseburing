@@ -91,7 +91,7 @@
 
 
         /* =========================
-           SARAN SECTION
+           SECTION
         ========================= */
 
         .saran-section {
@@ -152,7 +152,31 @@
 
 
         /* =========================
-           FORM CARD
+           CARD
+        ========================= */
+
+        .card {
+            width: 100%;
+
+            background: white;
+
+            padding: 45px 40px;
+
+            border-radius: 30px;
+
+            border: 1px solid #dfebe4;
+
+            box-shadow:
+                0 15px 40px rgba(31, 83, 60, 0.12);
+
+            text-align: left;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           FORM
         ========================= */
 
         .saran-form {
@@ -270,10 +294,6 @@
         }
 
 
-        /* =========================
-           PLACEHOLDER
-        ========================= */
-
         .saran-form-group input::placeholder,
         .saran-form-group textarea::placeholder {
             color: #a4afa9;
@@ -281,7 +301,7 @@
 
 
         /* =========================
-           INPUT FOCUS
+           FOCUS
         ========================= */
 
         .saran-form-group input:focus,
@@ -330,8 +350,10 @@
             transform: translateY(-2px);
         }
 
-        .saran-button:active {
-            transform: translateY(0);
+        .saran-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
         }
 
 
@@ -352,6 +374,438 @@
             font-weight: bold;
 
             min-height: 24px;
+        }
+
+
+        /* =========================
+           TOKEN BERHASIL
+        ========================= */
+
+        .token-box {
+
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 20px;
+
+            background: #e8f5ed;
+
+            border: 1px solid #b9dcc7;
+
+            border-radius: 16px;
+
+            text-align: center;
+        }
+
+        .token-box strong {
+            display: block;
+
+            color: #176044;
+
+            margin-bottom: 8px;
+        }
+
+        .token-value {
+
+            display: block;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            color: #176044;
+
+            word-break: break-all;
+
+            margin-bottom: 8px;
+        }
+
+        .token-info {
+
+            color: #66736d;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CEK SARAN
+        ========================= */
+
+        .cek-title {
+
+            color: #176044;
+
+            text-align: center;
+
+            font-size: 28px;
+
+            margin-bottom: 10px;
+        }
+
+        .cek-description {
+
+            color: #66736d;
+
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+        .cek-input {
+
+            width: 100%;
+
+            height: 58px;
+
+            padding: 15px 18px;
+
+            border: 1px solid #d5e1da;
+
+            border-radius: 16px;
+
+            background: #fbfdfc;
+
+            font-size: 16px;
+
+            outline: none;
+
+            margin-bottom: 15px;
+        }
+
+        .cek-input:focus {
+
+            border-color: #287454;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 3px rgba(40, 116, 84, 0.10);
+        }
+
+        .cek-button {
+
+            width: 100%;
+
+            padding: 16px;
+
+            border: none;
+
+            border-radius: 15px;
+
+            background: #176044;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .cek-button:hover {
+
+            background: #124b35;
+        }
+
+
+        /* =========================
+           HASIL SARAN
+        ========================= */
+
+        .hasil-saran {
+
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 25px;
+
+            background: #f1f8f4;
+
+            border-radius: 18px;
+
+            border: 1px solid #d9e9df;
+        }
+
+        .hasil-row {
+
+            margin-bottom: 12px;
+        }
+
+        .hasil-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .hasil-label {
+
+            display: block;
+
+            color: #287454;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 3px;
+        }
+
+        .hasil-value {
+
+            color: #26332d;
+
+            word-break: break-word;
+        }
+
+        .status-menunggu {
+
+            display: inline-block;
+
+            padding: 5px 12px;
+
+            border-radius: 20px;
+
+            background: #fff1c7;
+
+            color: #856404;
+
+            font-weight: bold;
+        }
+
+        .status-ditanggapi {
+
+            display: inline-block;
+
+            padding: 5px 12px;
+
+            border-radius: 20px;
+
+            background: #dff3e5;
+
+            color: #176044;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           ADMIN LOGIN
+        ========================= */
+
+        .admin-section {
+
+            margin-top: 45px;
+        }
+
+        .admin-title {
+
+            color: #176044;
+
+            text-align: center;
+
+            font-size: 28px;
+
+            margin-bottom: 10px;
+        }
+
+        .admin-description {
+
+            text-align: center;
+
+            color: #66736d;
+
+            margin-bottom: 25px;
+        }
+
+        .admin-login-box {
+
+            max-width: 500px;
+
+            margin: auto;
+        }
+
+        .admin-input {
+
+            width: 100%;
+
+            height: 55px;
+
+            padding: 15px;
+
+            border: 1px solid #d5e1da;
+
+            border-radius: 14px;
+
+            margin-bottom: 12px;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .admin-input:focus {
+
+            border-color: #287454;
+        }
+
+        .admin-button {
+
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 14px;
+
+            background: #176044;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .admin-button:hover {
+
+            background: #124b35;
+        }
+
+
+        /* =========================
+           PANEL ADMIN
+        ========================= */
+
+        #panelAdmin {
+
+            display: none;
+
+            margin-top: 30px;
+        }
+
+        .admin-panel-title {
+
+            color: #176044;
+
+            text-align: center;
+
+            margin-bottom: 25px;
+
+            font-size: 25px;
+        }
+
+        .admin-saran {
+
+            background: #f8fcf9;
+
+            border: 1px solid #dce9e1;
+
+            border-radius: 18px;
+
+            padding: 22px;
+
+            margin-bottom: 20px;
+        }
+
+        .admin-saran-title {
+
+            color: #176044;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .admin-saran-info {
+
+            margin-bottom: 8px;
+
+            color: #26332d;
+        }
+
+        .admin-saran-info strong {
+
+            color: #287454;
+        }
+
+        .admin-saran textarea {
+
+            width: 100%;
+
+            min-height: 120px;
+
+            padding: 14px;
+
+            margin-top: 12px;
+
+            border: 1px solid #d5e1da;
+
+            border-radius: 14px;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 15px;
+
+            resize: vertical;
+
+            outline: none;
+        }
+
+        .admin-saran textarea:focus {
+
+            border-color: #287454;
+        }
+
+        .admin-save {
+
+            width: 100%;
+
+            padding: 14px;
+
+            margin-top: 12px;
+
+            border: none;
+
+            border-radius: 14px;
+
+            background: #176044;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .admin-save:hover {
+
+            background: #124b35;
+        }
+
+        .logout-button {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 14px;
+
+            background: #8a3d3d;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 10px;
         }
 
 
@@ -408,26 +862,9 @@
             font-size: 14px !important;
         }
 
-        .admin-link {
-
-            display: inline-block;
-
-            margin-top: 15px;
-
-            color: #f5d477;
-
-            text-decoration: none;
-
-            font-weight: bold;
-        }
-
-        .admin-link:hover {
-            text-decoration: underline;
-        }
-
 
         /* =========================
-           TABLET
+           RESPONSIVE
         ========================= */
 
         @media (max-width: 768px) {
@@ -442,6 +879,7 @@
             }
 
             .navbar {
+
                 display: grid;
 
                 grid-template-columns: repeat(2, 1fr);
@@ -450,6 +888,7 @@
             }
 
             .navbar a {
+
                 text-align: center;
 
                 font-size: 13px;
@@ -457,45 +896,39 @@
                 padding: 11px 6px;
             }
 
-
             .saran-section {
+
                 padding: 70px 15px 80px;
             }
 
             .saran-container h2 {
+
                 font-size: 34px;
             }
 
             .saran-description {
+
                 font-size: 16px;
 
                 margin-bottom: 55px;
             }
 
-
             .saran-form {
+
                 padding: 55px 25px 35px;
 
                 border-radius: 25px;
             }
 
-            .saran-form-group input,
-            .saran-form-group select,
-            .saran-form-group textarea {
-                font-size: 15px;
-            }
+            .card {
 
+                padding: 35px 25px;
 
-            .footer {
-                padding: 40px 15px;
+                border-radius: 25px;
             }
 
         }
 
-
-        /* =========================
-           HP KECIL
-        ========================= */
 
         @media (max-width: 420px) {
 
@@ -504,57 +937,49 @@
             }
 
             .navbar a {
+
                 font-size: 12px;
 
                 padding: 10px 5px;
             }
 
-
             .saran-section {
+
                 padding: 60px 12px 70px;
             }
 
-
             .saran-container h2 {
+
                 font-size: 29px;
             }
 
-
             .saran-description {
+
                 font-size: 15px;
 
                 line-height: 1.7;
             }
 
-
             .saran-form {
+
                 padding: 52px 18px 30px;
 
                 border-radius: 22px;
             }
 
+            .card {
+
+                padding: 30px 18px;
+
+                border-radius: 22px;
+            }
 
             .saran-icon {
+
                 width: 68px;
                 height: 68px;
 
                 font-size: 28px;
-            }
-
-
-            .saran-form-group {
-                margin-bottom: 23px;
-            }
-
-
-            .saran-form-group input,
-            .saran-form-group select {
-                height: 54px;
-            }
-
-
-            .footer-logo {
-                font-size: 23px;
             }
 
         }
@@ -615,7 +1040,7 @@
 
 
     <!-- =========================
-         SARAN & MASUKAN
+         SARAN
     ========================= -->
 
     <section class="saran-section">
@@ -640,18 +1065,21 @@
 
 
 
-            <form id="saranForm" class="saran-form">
+            <!-- =========================
+                 FORM KIRIM SARAN
+            ========================= -->
 
+            <form
+                id="saranForm"
+                class="saran-form"
+            >
 
-                <!-- ICON -->
 
                 <div class="saran-icon">
                     💬
                 </div>
 
 
-
-                <!-- NAMA -->
 
                 <div class="saran-form-group">
 
@@ -670,8 +1098,6 @@
                 </div>
 
 
-
-                <!-- KATEGORI -->
 
                 <div class="saran-form-group">
 
@@ -711,8 +1137,6 @@
 
 
 
-                <!-- PESAN -->
-
                 <div class="saran-form-group">
 
                     <label for="pesanSaran">
@@ -731,18 +1155,15 @@
 
 
 
-                <!-- BUTTON -->
-
                 <button
                     type="submit"
                     class="saran-button"
+                    id="btnKirimSaran"
                 >
                     Kirim Masukan
                 </button>
 
 
-
-                <!-- STATUS -->
 
                 <p
                     id="statusSaran"
@@ -750,7 +1171,157 @@
                 ></p>
 
 
+
+                <!-- TOKEN -->
+
+                <div
+                    id="tokenBox"
+                    class="token-box"
+                >
+
+                    <strong>
+                        Token Saran Anda
+                    </strong>
+
+                    <span
+                        id="tokenValue"
+                        class="token-value"
+                    ></span>
+
+                    <span class="token-info">
+                        Simpan token ini untuk mengecek status
+                        dan tanggapan saran kamu.
+                    </span>
+
+                </div>
+
+
             </form>
+
+
+
+            <!-- =========================
+                 CEK SARAN
+            ========================= -->
+
+            <div class="card">
+
+                <h3 class="cek-title">
+                    🔎 Cek Saran Saya
+                </h3>
+
+                <p class="cek-description">
+                    Masukkan token yang kamu dapat setelah mengirim saran.
+                </p>
+
+
+                <input
+                    type="text"
+                    id="tokenCek"
+                    class="cek-input"
+                    placeholder="Masukkan token saran"
+                >
+
+
+                <button
+                    type="button"
+                    class="cek-button"
+                    id="btnCekSaran"
+                >
+                    Cek Status
+                </button>
+
+
+                <div
+                    id="hasilSaran"
+                    class="hasil-saran"
+                ></div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 ADMIN
+            ========================= -->
+
+            <div class="card admin-section">
+
+                <h3 class="admin-title">
+                    🔐 Admin Saran & Masukan
+                </h3>
+
+                <p class="admin-description">
+                    Login untuk melihat dan menanggapi saran masyarakat.
+                </p>
+
+
+                <!-- LOGIN ADMIN -->
+
+                <div
+                    id="adminLoginBox"
+                    class="admin-login-box"
+                >
+
+                    <input
+                        type="text"
+                        id="adminUsername"
+                        class="admin-input"
+                        placeholder="Username admin"
+                    >
+
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        class="admin-input"
+                        placeholder="Password admin"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="admin-button"
+                        id="btnLoginAdmin"
+                    >
+                        Login Admin
+                    </button>
+
+
+                    <p
+                        id="statusAdmin"
+                        class="status-saran"
+                    ></p>
+
+                </div>
+
+
+
+                <!-- PANEL ADMIN -->
+
+                <div id="panelAdmin">
+
+                    <h3 class="admin-panel-title">
+                        Daftar Saran Masyarakat
+                    </h3>
+
+
+                    <div id="daftarSaranAdmin">
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="logout-button"
+                        id="btnLogoutAdmin"
+                    >
+                        Logout Admin
+                    </button>
+
+                </div>
+
+            </div>
 
 
         </div>
@@ -765,38 +1336,38 @@
 
     <footer class="footer">
 
-
         <div class="footer-logo">
             🌿 Seburing Hilir
         </div>
 
-
         <p>
             Desa Seburing Hilir
         </p>
-
 
         <p>
             Kecamatan Semparuk, Kabupaten Sambas,
             Kalimantan Barat
         </p>
 
-
         <div class="footer-line"></div>
-
 
         <p class="copyright">
             © 2026 Website Keindahan Desa Seburing Hilir
         </p>
 
-
         <a
             href="login.html"
             class="admin-link"
+            style="
+                display:inline-block;
+                margin-top:15px;
+                color:#f5d477;
+                text-decoration:none;
+                font-weight:bold;
+            "
         >
             🔐 Login Admin
         </a>
-
 
     </footer>
 
@@ -806,9 +1377,844 @@
          JAVASCRIPT
     ========================= -->
 
-    <script src="config.js"></script>
+    <script>
 
-    <script src="script.js"></script>
+        /*
+         * URL GOOGLE APPS SCRIPT
+         *
+         * PAKAI URL DEPLOYMENT KAMU
+         */
+
+        const API_URL =
+            "https://script.google.com/macros/s/AKfycbwXZM3JocmsycsqVfgfZTn4c5Vfy2ePwZfrHxYDKtBegrm-4Iz2yVYUsHZfCcazKDCg/exec";
+
+
+        /* =========================
+           FORM SARAN
+        ========================= */
+
+        const saranForm =
+            document.getElementById("saranForm");
+
+        const btnKirimSaran =
+            document.getElementById("btnKirimSaran");
+
+        const statusSaran =
+            document.getElementById("statusSaran");
+
+        const tokenBox =
+            document.getElementById("tokenBox");
+
+        const tokenValue =
+            document.getElementById("tokenValue");
+
+
+        saranForm.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                btnKirimSaran.disabled = true;
+
+                btnKirimSaran.textContent =
+                    "Mengirim...";
+
+                statusSaran.textContent =
+                    "Saran sedang dikirim...";
+
+                statusSaran.style.color =
+                    "#287454";
+
+
+                tokenBox.style.display =
+                    "none";
+
+
+                const nama =
+                    document
+                        .getElementById("namaSaran")
+                        .value
+                        .trim();
+
+
+                const kategori =
+                    document
+                        .getElementById("kategoriSaran")
+                        .value
+                        .trim();
+
+
+                const pesan =
+                    document
+                        .getElementById("pesanSaran")
+                        .value
+                        .trim();
+
+
+                try {
+
+                    const formData =
+                        new URLSearchParams();
+
+                    formData.append(
+                        "action",
+                        "saran"
+                    );
+
+                    formData.append(
+                        "nama",
+                        nama
+                    );
+
+                    formData.append(
+                        "kategori",
+                        kategori
+                    );
+
+                    formData.append(
+                        "pesan",
+                        pesan
+                    );
+
+
+                    const response =
+                        await fetch(
+                            API_URL,
+                            {
+                                method: "POST",
+
+                                body: formData
+                            }
+                        );
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (
+                        result.status ===
+                        "success"
+                    ) {
+
+                        statusSaran.textContent =
+                            "Saran berhasil dikirim!";
+
+
+                        /*
+                         * MENAMPILKAN TOKEN
+                         */
+
+                        if (result.token) {
+
+                            tokenValue.textContent =
+                                result.token;
+
+                            tokenBox.style.display =
+                                "block";
+
+                        }
+
+
+                        saranForm.reset();
+
+                    } else {
+
+                        statusSaran.textContent =
+                            result.message ||
+                            "Saran gagal dikirim.";
+
+                        statusSaran.style.color =
+                            "#9b2929";
+
+                    }
+
+
+                } catch (error) {
+
+                    console.error(error);
+
+                    statusSaran.textContent =
+                        "Terjadi kesalahan saat mengirim saran.";
+
+                    statusSaran.style.color =
+                        "#9b2929";
+
+                }
+
+
+                btnKirimSaran.disabled = false;
+
+                btnKirimSaran.textContent =
+                    "Kirim Masukan";
+
+            }
+        );
+
+
+
+        /* =========================
+           CEK SARAN
+        ========================= */
+
+        const btnCekSaran =
+            document.getElementById("btnCekSaran");
+
+        const tokenCek =
+            document.getElementById("tokenCek");
+
+        const hasilSaran =
+            document.getElementById("hasilSaran");
+
+
+        btnCekSaran.addEventListener(
+            "click",
+            async function() {
+
+                const token =
+                    tokenCek.value.trim();
+
+
+                if (!token) {
+
+                    hasilSaran.style.display =
+                        "block";
+
+                    hasilSaran.innerHTML =
+                        "<p style='color:#9b2929;font-weight:bold;'>Token wajib diisi.</p>";
+
+                    return;
+
+                }
+
+
+                btnCekSaran.disabled =
+                    true;
+
+                btnCekSaran.textContent =
+                    "Mengecek...";
+
+
+                hasilSaran.style.display =
+                    "block";
+
+                hasilSaran.innerHTML =
+                    "<p>Memeriksa data...</p>";
+
+
+                try {
+
+                    const url =
+                        API_URL +
+                        "?action=cekSaran&token=" +
+                        encodeURIComponent(token);
+
+
+                    const response =
+                        await fetch(url);
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (
+                        result.status !==
+                        "success"
+                    ) {
+
+                        hasilSaran.innerHTML =
+                            "<p style='color:#9b2929;font-weight:bold;'>" +
+                            (
+                                result.message ||
+                                "Data tidak ditemukan."
+                            ) +
+                            "</p>";
+
+                        return;
+
+                    }
+
+
+                    const data =
+                        result.data;
+
+
+                    let statusClass =
+                        "status-menunggu";
+
+
+                    if (
+                        String(data.status)
+                            .toLowerCase() ===
+                        "ditanggapi"
+                    ) {
+
+                        statusClass =
+                            "status-ditanggapi";
+
+                    }
+
+
+                    hasilSaran.innerHTML = `
+
+                        <div class="hasil-row">
+
+                            <span class="hasil-label">
+                                Nama
+                            </span>
+
+                            <div class="hasil-value">
+                                ${escapeHTML(data.nama || "-")}
+                            </div>
+
+                        </div>
+
+
+                        <div class="hasil-row">
+
+                            <span class="hasil-label">
+                                Kategori
+                            </span>
+
+                            <div class="hasil-value">
+                                ${escapeHTML(data.kategori || "-")}
+                            </div>
+
+                        </div>
+
+
+                        <div class="hasil-row">
+
+                            <span class="hasil-label">
+                                Pesan
+                            </span>
+
+                            <div class="hasil-value">
+                                ${escapeHTML(data.pesan || "-")}
+                            </div>
+
+                        </div>
+
+
+                        <div class="hasil-row">
+
+                            <span class="hasil-label">
+                                Status
+                            </span>
+
+                            <div class="hasil-value">
+
+                                <span class="${statusClass}">
+                                    ${escapeHTML(data.status || "Menunggu")}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hasil-row">
+
+                            <span class="hasil-label">
+                                Tanggapan Admin
+                            </span>
+
+                            <div class="hasil-value">
+                                ${escapeHTML(
+                                    data.tanggapan ||
+                                    "Belum ada tanggapan."
+                                )}
+                            </div>
+
+                        </div>
+
+                    `;
+
+
+                } catch (error) {
+
+                    console.error(error);
+
+                    hasilSaran.innerHTML =
+                        "<p style='color:#9b2929;font-weight:bold;'>Gagal mengambil data. Periksa URL Apps Script dan deployment.</p>";
+
+                }
+
+
+                btnCekSaran.disabled =
+                    false;
+
+                btnCekSaran.textContent =
+                    "Cek Status";
+
+            }
+        );
+
+
+
+        /* =========================
+           LOGIN ADMIN
+        ========================= */
+
+        const btnLoginAdmin =
+            document.getElementById("btnLoginAdmin");
+
+        const adminUsername =
+            document.getElementById("adminUsername");
+
+        const adminPassword =
+            document.getElementById("adminPassword");
+
+        const statusAdmin =
+            document.getElementById("statusAdmin");
+
+        const adminLoginBox =
+            document.getElementById("adminLoginBox");
+
+        const panelAdmin =
+            document.getElementById("panelAdmin");
+
+
+        btnLoginAdmin.addEventListener(
+            "click",
+            async function() {
+
+                const username =
+                    adminUsername.value.trim();
+
+                const password =
+                    adminPassword.value.trim();
+
+
+                if (!username || !password) {
+
+                    statusAdmin.textContent =
+                        "Username dan password wajib diisi.";
+
+                    statusAdmin.style.color =
+                        "#9b2929";
+
+                    return;
+
+                }
+
+
+                btnLoginAdmin.disabled =
+                    true;
+
+                btnLoginAdmin.textContent =
+                    "Memeriksa...";
+
+
+                try {
+
+                    const formData =
+                        new URLSearchParams();
+
+                    formData.append(
+                        "action",
+                        "login"
+                    );
+
+                    formData.append(
+                        "username",
+                        username
+                    );
+
+                    formData.append(
+                        "password",
+                        password
+                    );
+
+
+                    const response =
+                        await fetch(
+                            API_URL,
+                            {
+                                method: "POST",
+                                body: formData
+                            }
+                        );
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (
+                        result.status !==
+                        "success"
+                    ) {
+
+                        statusAdmin.textContent =
+                            result.message ||
+                            "Login gagal.";
+
+                        statusAdmin.style.color =
+                            "#9b2929";
+
+                        return;
+
+                    }
+
+
+                    statusAdmin.textContent =
+                        "Login berhasil.";
+
+                    statusAdmin.style.color =
+                        "#287454";
+
+
+                    adminLoginBox.style.display =
+                        "none";
+
+
+                    panelAdmin.style.display =
+                        "block";
+
+
+                    loadSaranAdmin();
+
+
+                } catch (error) {
+
+                    console.error(error);
+
+                    statusAdmin.textContent =
+                        "Gagal terhubung ke Apps Script.";
+
+                    statusAdmin.style.color =
+                        "#9b2929";
+
+                }
+
+
+                btnLoginAdmin.disabled =
+                    false;
+
+                btnLoginAdmin.textContent =
+                    "Login Admin";
+
+            }
+        );
+
+
+
+        /* =========================
+           LOAD DATA ADMIN
+        ========================= */
+
+        async function loadSaranAdmin() {
+
+            const daftar =
+                document.getElementById(
+                    "daftarSaranAdmin"
+                );
+
+
+            daftar.innerHTML =
+                "<p style='text-align:center;'>Memuat saran...</p>";
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        API_URL +
+                        "?action=getSaran"
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                if (
+                    result.status !==
+                    "success"
+                ) {
+
+                    daftar.innerHTML =
+                        "<p style='color:#9b2929;'>Gagal mengambil data saran.</p>";
+
+                    return;
+
+                }
+
+
+                const data =
+                    result.data || [];
+
+
+                if (data.length === 0) {
+
+                    daftar.innerHTML =
+                        "<p style='text-align:center;'>Belum ada saran.</p>";
+
+                    return;
+
+                }
+
+
+                daftar.innerHTML = "";
+
+
+                data.forEach(
+                    function(item, index) {
+
+                        const div =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        div.className =
+                            "admin-saran";
+
+
+                        div.innerHTML = `
+
+                            <div class="admin-saran-title">
+                                Saran #${index + 1}
+                            </div>
+
+
+                            <div class="admin-saran-info">
+                                <strong>Token:</strong>
+                                ${escapeHTML(item.token || "-")}
+                            </div>
+
+
+                            <div class="admin-saran-info">
+                                <strong>Nama:</strong>
+                                ${escapeHTML(item.nama || "-")}
+                            </div>
+
+
+                            <div class="admin-saran-info">
+                                <strong>Kategori:</strong>
+                                ${escapeHTML(item.kategori || "-")}
+                            </div>
+
+
+                            <div class="admin-saran-info">
+                                <strong>Pesan:</strong>
+                                ${escapeHTML(item.pesan || "-")}
+                            </div>
+
+
+                            <div class="admin-saran-info">
+                                <strong>Status:</strong>
+                                ${escapeHTML(item.status || "Menunggu")}
+                            </div>
+
+
+                            <textarea
+                                id="tanggapan-${index}"
+                                placeholder="Tulis tanggapan admin..."
+                            >${escapeHTML(item.tanggapan || "")}</textarea>
+
+
+                            <button
+                                type="button"
+                                class="admin-save"
+                                onclick="simpanTanggapan(
+                                    '${escapeJS(item.token || "")}',
+                                    ${index}
+                                )"
+                            >
+                                Simpan Tanggapan
+                            </button>
+
+                        `;
+
+
+                        daftar.appendChild(div);
+
+                    }
+                );
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                daftar.innerHTML =
+                    "<p style='color:#9b2929;'>Gagal mengambil data dari Apps Script.</p>";
+
+            }
+
+        }
+
+
+
+        /* =========================
+           SIMPAN TANGGAPAN
+        ========================= */
+
+        async function simpanTanggapan(
+            token,
+            index
+        ) {
+
+            const textarea =
+                document.getElementById(
+                    "tanggapan-" + index
+                );
+
+
+            const tanggapan =
+                textarea.value.trim();
+
+
+            if (!tanggapan) {
+
+                alert(
+                    "Tanggapan belum diisi."
+                );
+
+                return;
+
+            }
+
+
+            try {
+
+                const formData =
+                    new URLSearchParams();
+
+                formData.append(
+                    "action",
+                    "updateSaran"
+                );
+
+                formData.append(
+                    "token",
+                    token
+                );
+
+                formData.append(
+                    "status",
+                    "Ditanggapi"
+                );
+
+                formData.append(
+                    "tanggapan",
+                    tanggapan
+                );
+
+
+                const response =
+                    await fetch(
+                        API_URL,
+                        {
+                            method: "POST",
+                            body: formData
+                        }
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                if (
+                    result.status !==
+                    "success"
+                ) {
+
+                    alert(
+                        result.message ||
+                        "Tanggapan gagal disimpan."
+                    );
+
+                    return;
+
+                }
+
+
+                alert(
+                    "Tanggapan berhasil disimpan."
+                );
+
+
+                loadSaranAdmin();
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                alert(
+                    "Terjadi kesalahan saat menyimpan tanggapan."
+                );
+
+            }
+
+        }
+
+
+
+        /* =========================
+           LOGOUT
+        ========================= */
+
+        document
+            .getElementById("btnLogoutAdmin")
+            .addEventListener(
+                "click",
+                function() {
+
+                    adminLoginBox.style.display =
+                        "block";
+
+                    panelAdmin.style.display =
+                        "none";
+
+                    adminUsername.value =
+                        "";
+
+                    adminPassword.value =
+                        "";
+
+                    statusAdmin.textContent =
+                        "";
+
+                }
+            );
+
+
+
+        /* =========================
+           SECURITY / HTML ESCAPE
+        ========================= */
+
+        function escapeHTML(value) {
+
+            return String(value || "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        function escapeJS(value) {
+
+            return String(value || "")
+                .replace(/\\/g, "\\\\")
+                .replace(/'/g, "\\'")
+                .replace(/\r/g, "\\r")
+                .replace(/\n/g, "\\n");
+
+        }
+
+    </script>
 
 
 </body>
